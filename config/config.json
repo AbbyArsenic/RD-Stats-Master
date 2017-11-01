@@ -1,8 +1,8 @@
 {
   "development":
   {
-    "username": "public",
-    "password": "yourpassword",
+    "username": "TylerPC",
+    "password": "chewyrunts",
     "database": "derby_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
