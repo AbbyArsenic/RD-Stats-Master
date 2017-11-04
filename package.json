@@ -1,0 +1,40 @@
+{
+  "name": "rd-stats-master",
+  "version": "1.0.0",
+  "description": "statistics database for sport leagues",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.4.2",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.19.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbbyArsenic/RD-Stats-Master.git"
+  },
+  "keywords": [
+    "express",
+    "handlebars",
+    "sequelize",
+    "node"
+  ],
+  "author": "Group Awesome",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbbyArsenic/RD-Stats-Master/issues"
+  },
+  "homepage": "https://github.com/AbbyArsenic/RD-Stats-Master#readme"
+}
