@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
       //   model: ,
       //   key: 
       // },
-      validate: { min: 0 }
+      // validate: { min: 0 }
     },
     pivot: {
       type: DataTypes.INTEGER,
@@ -50,12 +50,12 @@ module.exports = function(sequelize, DataTypes) {
     blocker2: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      validate: { min: 0 }
+      // validate: { min: 0 }
     },
     blocker3: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      validate: { min: 0 }
+      // validate: { min: 0 }
     },
     star_pass: {
       type: DataTypes.BOOLEAN,
