@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     jammer: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       // Should these positions be made as Foreign Keys?
       // references: {
       //   model: ,
@@ -49,12 +49,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     blocker2: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       validate: { min: 0 }
     },
     blocker3: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       validate: { min: 0 }
     },
     star_pass: {
