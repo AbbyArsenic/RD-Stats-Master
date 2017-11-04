@@ -1,32 +1,32 @@
 var db = require("../models");
 
-var Player = require("../models/player.js");
+var Skaters = require("../models/skaters.js");
 
 module.exports = function(app) {
 
-	// Route to get all players
-	app.get("/api/player", function (req, res) {
-		Player.findAll({}).then(function (dbPlayer){
-			res.json(dbPlayer);
+	// Route to get all skaters
+	app.get("/api/skaters", function (req, res) {
+		Skaters.findAll({}).then(function (data){
+			res.json(data);
 		});
 	});
 
-	// Route for finding all players on a team by teamID
-	app.get("/api/player/:teamID", function (req, res) {
-		Player.findAll({
+	// Route for finding all skaters on a team by teamID
+	app.get("/api/skaters/:team_id", function (req, res) {
+		Skaters.findAll({
 			where: {
-				teamID: req.params.teamID
+				team_id: req.params.team_id
 			}
 		}).then(function(data) {
 			res.json(data);
 		});
 	});
 
-	// Route to get a specific player
-	app.get("/api/player/:playerName", function (req, res) {
-		Player.findOne({
+	// Route to get a specific skater
+	app.get("/api/skaters/:skater_id", function (req, res) {
+		Skaters.findOne({
 			where: {
-				teamID: req.params.playerName
+				skater_id: req.params.skater_id
 			}
 		}).then(function(data) {
 			res.json(data);
