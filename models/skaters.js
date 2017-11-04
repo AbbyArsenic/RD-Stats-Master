@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 
   var Skaters = sequelize.define("skaters", {
 
-    skater_id: {
+    team_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -23,6 +23,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: { len: [1] }
     }
+  },
+  {
+    timestamps: false,
+    freezeTableName: true
   });
 
   return Skaters;

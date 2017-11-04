@@ -19,6 +19,10 @@ module.exports = function(sequelize, DataTypes) {
     date: {
       type: DataTypes.DATEONLY,     
     }
+  },
+  {
+    timestamps: false,
+    freezeTableName: true
   });
 
   return Bouts;
