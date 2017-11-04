@@ -8,10 +8,16 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var passport = require("passport");
 
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -30,9 +36,13 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./routes/html-routes.js")(app);
-require("./routes/player-api-routes.js")(app);
-require("./routes/team-api-routes.js")(app);
+// require("./routes/html-routes.js")(app);
+// require("./routes/player-api-routes.js")(app);
+// require("./routes/team-api-routes.js")(app);
+
+var routes = require("./controllers/league.js");
+
+app.use("/", routes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

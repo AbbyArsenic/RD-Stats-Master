@@ -1,0 +1,90 @@
+<div id="background">
+  <!-- nav and controls -->
+  <nav class="navbar sticky-top navbar-dark bg-dark justify-content-lg-around flex-md-wrap">
+    <button type="button" class="btn btn-secondary btn-lg active space">
+      Jam Number: <span class="badge badge-dark" id="jamNumber">0</span>
+    </button>
+    <button type="button" class="btn btn-secondary btn-lg active space">
+      <div class="form-group row">
+        <label for="jamScore" class="col-sm-3 col-form-label">Score:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="jamScore">
+        </div>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="starPass">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Star Pass</span>
+        </label>
+      </div>
+    </button>
+    <button type="button" class="btn btn-secondary btn-lg active space">
+      Total Points: <span class="badge badge-dark" id="totalPoints">0</span>
+    </button>
+  </nav>
+  <!-- container for form body -->
+  <div class="container bodyForm mt-2">
+    <!-- Dropdown for selecting team -->
+    <form class="ml-5">
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label class="mr-sm-2" for="teamSelect">Please select a team</label>
+          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="teamSelect">
+            <option selected>Choose...</option>
+            <option value="1">Bombshells</option>
+            <option value="2">Brutal Beauties</option>
+            <option value="3">Coffin Draggers</option>
+            <option value="4">Doomsday Valkyries</option>
+            <option value="5">Runway Brides</option>
+            <option value="6">Schoolyard Scrappers</option>
+          </select>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-secondary" id="select">Select</button>
+        </div>
+      </div>
+    </form>
+    <!-- Heading display for the populated data -->
+    <div class="dataHeading mt-4">
+      <div class="row">
+        <div class="col-2">
+          <h2>Player #</h2></div>
+        <div class="col-1">
+          <h2>J</h2></div>
+        <div class="col-1">
+          <h2>P</h2></div>
+        <div class="col-1">
+          <h2>B</h2></div>
+        <div class="col-7">
+          <h2>Penalties</h2></div>
+      </div>
+    </div>
+    <!-- The Div that that populated data gets placed -->
+    <!-- DUMMY DATA -->
+    <div id="playerData" class="mt-3 mb-5">
+      <!-- end of body div tag -->
+    </div>
+    <div class="mt-5"></div>
+    <</div>
+      <div class="mt-5"></div>
+      <!-- footer with buttons -->
+      <footer class="footer">
+        <nav class="navbar navbar-dark bg-dark justify-content-around">
+          <button type="button" class="btn btn-secondary btn-lg " id="back">
+            Back
+          </button>
+          <button type="button" class="btn btn-secondary btn-lg " id="qb">
+            QB
+          </button>
+          <button type="submit" class="btn btn-secondary btn-lg" id="back">
+            Submit
+          </button>
+        </nav>
+      </footer>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- jQuery for generating buttons -->
+  <script src="assets/js/league.js" type="text/javascript"></script>
