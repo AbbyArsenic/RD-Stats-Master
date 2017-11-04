@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS `statsmaster_db`;
 CREATE DATABASE `statsmaster_db`; 
 USE `statsmaster_db`;
 
-/* Create a table for all jams*/
+/* Create a table for all jam history*/
 CREATE TABLE `jams` (
 `jam_id` INT AUTO_INCREMENT PRIMARY KEY,
 `bout_id` INT NOT NULL,
@@ -15,39 +15,46 @@ CREATE TABLE `jams` (
 `blocker1` INT,
 `blocker2` INT,
 `blocker3` INT,
-`star_pass` BOOLEAN default false,
+`star_pass` BOOLEAN default false
 ); 
 
-/* Create a table for all penalties*/
+/* Create a table for all penalties incurred*/
 CREATE TABLE `penalties` (
 `penalty_id`INT AUTO_INCREMENT PRIMARY KEY,
 `bout_id` INT,
 `jam_number` INT NOT NULL, 
 `skater_id` INT NOT NULL,
-`penalty` VARCHAR(255),
+`penaltycode_id` INT NOT NULL
 ); 
 
-/* Create a table for all teams (league, city, colors)*/
+/* Create a table for all teams (could add league, city, colors)*/
 CREATE TABLE `teams` (
-`team_id`INT auto_increment,
-`team_name` VARCHAR(50) NOT NULL, 
-PRIMARY KEY ( `team_id` )
+`team_id`INT auto_increment PRIMARY KEY,
+`team_name` VARCHAR(50) NOT NULL
 ); 
 
-/* Create a table for all players*/
+/* Create a table for all skaters*/
 CREATE TABLE `skaters` (
 `skater_id`INT AUTO_INCREMENT PRIMARY KEY,
 `skater_number` VARCHAR(50),
 `skater_name` VARCHAR(50) NOT NULL,
-`team_id` INT, 
+`team_id` INT
 ); 
 
+/* Create a table for all bouts*/
 CREATE TABLE `bouts` (
 `bout_id` INT AUTO_INCREMENT PRIMARY KEY,
-`team1_id` INT,
-`team2_id` INT, 
+`team1_id` INT NOT NULL,
+`team2_id` INT NOT NULL, 
 `date` DATE
 ); 
+
+/* Create a table for all penalty codes*/
+CREATE TABLE `penalty_codes` (
+`penaltycode_id`INT AUTO_INCREMENT PRIMARY KEY,
+`penalty_code` VARCHAR(3) NOT NULL,
+`penalty_name` VARCHAR(50) NOT NULL
+);
 
 /* Create a table for referees*/
 CREATE TABLE `referee`(
