@@ -10,19 +10,19 @@ var router = express.Router();
 // var teams = require("models/teams.js");
 
 router.get("/league", function(req, res) {
-  res.render("league");
+  res.render("league", { title: 'League' });
 });
 
 router.get("/team", function(req, res) {
-  res.render("team");
+  res.render("team", { title: 'Team' });
 });
 
 router.get("/register", function(req, res) {
-  res.render("register");
+  res.render("register", { title: 'Registration' });
 });
 
 router.get("*", function(req, res) {
-  res.render("index");
+  res.render("index", { title: 'AZDD' });
 });
 
 module.exports = router;
