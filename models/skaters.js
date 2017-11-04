@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 
   var Skaters = sequelize.define("skaters", {
 
-    team_id: {
+    skater_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
