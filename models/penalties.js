@@ -23,6 +23,10 @@ module.exports = function(sequelize, DataTypes) {
     penalty: {
       type: DataTypes.STRING,
     }
+  },
+  {
+    timestamps: false,
+    freezeTableName: true
   });
   
   return Penalties;

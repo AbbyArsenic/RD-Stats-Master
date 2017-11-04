@@ -59,8 +59,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     star_pass: {
       type: DataTypes.BOOLEAN,
-      default: false
+      // allowNull: false,
+      default: 0
     }
+  },
+  {
+    timestamps: false,
+    freezeTableName: true
   });
   
   return Jams;

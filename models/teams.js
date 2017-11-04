@@ -15,6 +15,10 @@ module.exports = function(sequelize, DataTypes) {
   	    leng: [1]
   	  }
   	}
+  },
+  {
+    timestamps: false,
+    freezeTableName: true
   });
 
   return Teams;
