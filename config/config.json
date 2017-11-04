@@ -1,9 +1,9 @@
 {
   "development":
   {
-    "username": "root",
-    "password": "hackthew0rld",
-    "database": "derby_db",
+    "username": "public",
+    "password": "yourpassword",
+    "database": "statsmaster_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

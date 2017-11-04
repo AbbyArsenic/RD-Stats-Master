@@ -49,6 +49,17 @@ CREATE TABLE `bouts` (
 `date` DATE
 ); 
 
+/* Create a table for referees*/
+CREATE TABLE `referee`(
+`referee_id` INT auto_increment,
+`referee_name` VARCHAR (15) NOT NULL, 
+`referee_email` VARCHAR (100) NOT NULL, 
+`referee_password` BINARY (100) NOT NULL,
+PRIMARY KEY ( `referee_id` ),
+UNIQUE KEY `referee_name` (`referee_name`),
+UNIQUE KEY `referee_email` (`referee_email`)
+);
+
 SHOW TABLES;
 
 INSERT INTO teams (team_name) VALUES ("Nature"), ("Destruction");
