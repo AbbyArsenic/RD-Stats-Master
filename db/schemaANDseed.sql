@@ -57,7 +57,7 @@ CREATE TABLE `penalty_codes` (
 );
 
 /* Create a table for referees*/
-CREATE TABLE `referee`(
+CREATE TABLE `referees`(
 `referee_id` INT auto_increment,
 `referee_name` VARCHAR (15) NOT NULL, 
 `referee_email` VARCHAR (100) NOT NULL, 

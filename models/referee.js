@@ -10,21 +10,16 @@ module.exports = function(sequelize, DataTypes) {
     referee_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: { min: 4, max: 15 }
+      unique: true
     },
     referee_email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
+      unique: true
     },
     referee_password: {
       type: DataTypes.STRING.BINARY,
-      allowNull: false,
-      validate: { min: 8, max: 100 }
+      allowNull: false
     },
   });
 

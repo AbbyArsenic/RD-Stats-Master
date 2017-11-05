@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var expressValidator = require('express-validator');
 var passport = require("passport");
 
 // Set Handlebars.
@@ -28,6 +29,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+app.use(expressValidator());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -36,13 +39,10 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-// require("./routes/html-routes.js")(app);
-// require("./routes/player-api-routes.js")(app);
-// require("./routes/team-api-routes.js")(app);
-
-var routes = require("./controllers/league.js");
-
-app.use("/", routes);
+require("./routes/html-routes.js")(app);
+require("./routes/player-api-routes.js")(app);
+require("./routes/team-api-routes.js")(app);
+require("./routes/referee-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
