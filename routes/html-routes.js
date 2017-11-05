@@ -2,17 +2,20 @@ var path = require("path");
 
 module.exports = function(app) {
 
-	app.get("/team-display", function(req, res) {
-		res.sendFile(path.join(__dirname, "../public/team.html"));
-	});
+  app.get("/league", function(req, res) {
+    res.render("league", { title: 'League' });
+  });
 
-	app.get("/enter-bout-stats", function(req, res) {
-		res.sendFile(path.join(__dirname, "../public/enterStats.html"));
-	});
+  app.get("/team", function(req, res) {
+    res.render("team", { title: 'Team' });
+  });
 
-	app.get("*", function(req, res) {
-		res.sendFile(path.join(__dirname, "../public/index.html"));
-	});
+  app.get("/register", function(req, res) {
+    res.render("register", { title: 'Registration' });
+  });
+
+  app.get("*", function(req, res) {
+    res.render("index", { title: 'AZDD' });
+  });
 
 };
-
