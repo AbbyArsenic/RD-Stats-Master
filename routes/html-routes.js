@@ -14,7 +14,7 @@ module.exports = function(app) {
     res.render("register", { title: 'Registration' });
   });
 
-  app.get("*", function(req, res) {
+  app.get("/", function(req, res) {
     res.render("index", { title: 'AZDD' });
   });
 
