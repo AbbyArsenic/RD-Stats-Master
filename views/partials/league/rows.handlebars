@@ -1,0 +1,33 @@
+{{#each skaters}}
+  <div class="row mt-2">
+
+    <div class="col-2">
+      <button type="button" data-type="linkTo.player[0]" class="btn btn-danger">
+        <p class="normal">{{this.skater_number}}</p>
+      </button>
+    </div>
+
+    <div class="col-1">
+      <label class="form-check-label">
+        <input type="checkbox" data-type="linkTo.player["+{{this.skater_id}}+"]" class="form-check-input" id="jammer[0]" value="j">
+      </label>
+    </div>
+
+    <div class="col-1">
+      <label class="form-check-label">
+        <input type="checkbox" data-type="linkTo.player[0]" class="form-check-input" id="pivot[0]" value="p">
+      </label>
+    </div>
+
+    <div class="col-1">
+      <label class="form-check-label">
+        <input type="checkbox" data-type="linkTo.player[0]" class="form-check-input" id="blocker[0]" value="b">
+      </label>
+    </div>
+
+    <div class="col-7">
+      <input type="text" data-type="linkTo.player[0]" class="form-control" id="blocker[0]" placeholder="Penalties">
+    </div>
+
+  </div>
+{{/each}}
