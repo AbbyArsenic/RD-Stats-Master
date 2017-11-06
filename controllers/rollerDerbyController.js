@@ -2,12 +2,15 @@ const express = require("express");
 
 const router = express.Router();
 
+var passport = require("passport");
 var bcrypt = require('bcrypt');
 var saltRounds = 10;
 
-const db = require("../models/");
+var db = require("../models/");
 
 router.get("/league", function(req, res) {
+  // console.log(req.user);
+  // console.log(req.isAuthenticated());
   db.teams.findAll({})
     .then(function(teams) {
       res.render("league", {
@@ -97,7 +100,12 @@ router.get("*", function(req, res) {
   res.render("index", { title: 'AZDD' });
 });
 
-// Referee Section
+// Referee Post Section
+
+router.post('/login', passport.authenticate("local", {
+  successRedirect: "/league",
+  failureRedirect: "/login"
+}));
 
 router.post('/register', function(req, res, next) {
 
@@ -172,6 +180,14 @@ router.post('/register', function(req, res, next) {
       });
     }
   });
+});
+
+passport.serializeUser(function(referee_id, done) {
+  done(null, referee_id);
+});
+
+passport.deserializeUser(function(referee_id, done) {
+  done(null, referee_id);
 });
 
 module.exports = router;
