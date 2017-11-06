@@ -2,19 +2,12 @@ var express = require("express");
 
 var router = express.Router();
 
-// router.get("/register", function(req, res) {
-//   res.render("register", { title: 'Registration' });
-// });
-// !! Referee Section !!
-
-// var passport = require('passport');
-// var bcrypt = require('bcrypt');
-// var saltRounds = 10;
+var bcrypt = require('bcrypt');
+var saltRounds = 10;
 
 // Import the model (referee.js) to use its database functions.
 var db = require("../models");
 
-// router.post('/register', function(req, res) {
 router.post('/register', function(req, res, next) {
 
   var referee_name = req.body.username;
@@ -66,30 +59,26 @@ router.post('/register', function(req, res, next) {
               errors: errors
             });
           } else {
-            db.referee.create({
-                referee_name: referee_name,
-                referee_email: referee_email,
-                referee_password: referee_password
-              }).then(function(result) {
-                var newUser = [{ "msg": "Thank you for creating a new user.  Please login below." }];
-                res.render("login", {
-                  title: "New User",
-                  newUser: newUser
+            bcrypt.hash(referee_password, saltRounds, function(error, hash) {
+              if (error) throw error;
+              db.referee.create({
+                  referee_name: referee_name,
+                  referee_email: referee_email,
+                  referee_password: hash
+                }).then(function(result) {
+                  var newUser = [{ "msg": "Thank you for creating a new user.  Please login below." }];
+                  res.render("login", {
+                    title: "New User",
+                    newUser: newUser
+                  });
+                })
+                .catch(function(err) {
+                  res.json(err);
                 });
-              })
-              .catch(function(err) {
-                res.json(err);
-              });
+            })
           }
         }
       });
-
-      // bcrypt.hash(referee_password, saltRounds, function(err, hash) {
-      // Store hash in your password DB.
-      // db.query("INSERT INTO referees (referee_name, email, password) VALUES (?, ?, ?)", [referee_name, referee_email, hash], function(error, results, fields) {
-      // db.Referee.create({
-      // console.log(db.referees);
-      // console.log(db);
     }
   });
 });
