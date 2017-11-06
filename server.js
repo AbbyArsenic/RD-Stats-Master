@@ -13,6 +13,7 @@ var session = require("express-session");
 var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt');
+// var flash = require("connect-flash");
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -33,6 +34,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+// app.use(flash());
 
 app.use(expressValidator());
 
@@ -65,7 +68,11 @@ passport.use(new LocalStrategy(
       }
     }).then(function(data) {
 
-      // Not match is crashing app
+      // Username doesn't match - Returns to login page - but no message!!
+      if (!data) {
+        alert("User does not exist");
+        return done(null, false);
+      }
 
       var hash = data.dataValues.referee_password;
       var referee_id = data.dataValues.referee_id;
