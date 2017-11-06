@@ -7,6 +7,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var expressValidator = require('express-validator');
+
+// Authenication packages
+var session = require("express-session");
 var passport = require("passport");
 
 // Set Handlebars.
@@ -31,11 +34,17 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(expressValidator());
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 // Static directory
 app.use(express.static("public"));
+
+app.use(session({
+  secret: 'viuwevbbvuabvmastvc', // Update with random string generator - Phase 2
+  resave: false,
+  saveUninitialized: false, // Only saves session cookie is signed in
+  // cookie: { secure: true }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 // =============================================================
