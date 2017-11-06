@@ -46,14 +46,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Routes
+// Routes - - This will be replaced by a controller file to follow the MVC Paradigm
 // =============================================================
-require("./routes/html-routes.js")(app);
-require("./routes/player-api-routes.js")(app);
-require("./routes/team-api-routes.js")(app);
+// require("./routes/html-routes.js")(app);
+// require("./routes/player-api-routes.js")(app);
+// require("./routes/team-api-routes.js")(app);
 // require("./routes/referee-api-routes.js")(app);
 
-var routes = require("./routes/referee.js");
+var routes = require("./controllers/rollerDerbyController.js");
 app.use("/", routes);
 
 // Syncing our sequelize models and then starting our Express app
