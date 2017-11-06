@@ -8,9 +8,11 @@ var saltRounds = 10;
 
 var db = require("../models/");
 
+// This is the router.get line for authenication turned OFF
 router.get("/league", function(req, res) {
-  // console.log(req.user);
-  // console.log(req.isAuthenticated());
+
+  // This is the router.get line for authenticaion turned ON
+  // router.get("/league", authenticationMiddleware(), function(req, res) {
   db.teams.findAll({})
     .then(function(teams) {
       res.render("league", {
@@ -104,7 +106,7 @@ router.get("*", function(req, res) {
 
 router.post('/login', passport.authenticate("local", {
   successRedirect: "/league",
-  failureRedirect: "/login"
+  failureRedirect: "/login",
 }));
 
 router.post('/register', function(req, res, next) {
@@ -189,5 +191,13 @@ passport.serializeUser(function(referee_id, done) {
 passport.deserializeUser(function(referee_id, done) {
   done(null, referee_id);
 });
+
+function authenticationMiddleware() {
+  return (req, res, next) => {
+    console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
+    if (req.isAuthenticated()) return next();
+    res.redirect('/login')
+  }
+}
 
 module.exports = router;
