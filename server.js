@@ -68,10 +68,9 @@ passport.use(new LocalStrategy(
       }
     }).then(function(data) {
 
-      // Username doesn't match - Returns to login page - but no message!!
+      // Username doesn't match - Returns to login page - Need to display error message - Phase 2!!
       if (!data) {
-        alert("User does not exist");
-        return done(null, false);
+        return done(null, false, { message: "No user found." });
       }
 
       var hash = data.dataValues.referee_password;
@@ -86,15 +85,17 @@ passport.use(new LocalStrategy(
           return done(null, { referee_id: referee_id }); // If name and password match, return id
 
         }
-        // Username match but password not match - Returns to login page - but no message!!
+        // Username match but password not match - Returns to login page - Need to display error message - Phase 2!!
         else {
-          return done(null, false);
+          return done(null, false, { message: "Wrong password." });
         }
       });
-
     });
   }
 ));
+
+
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
