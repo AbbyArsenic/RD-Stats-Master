@@ -34,6 +34,7 @@ router.get("/register", function(req, res) {
   res.render("register", { title: 'Registration' });
 });
 
+// Need to display error message for redirects - Phase 2
 router.get("/login", function(req, res) {
   res.render("login", { title: 'Login' });
 });
@@ -104,9 +105,10 @@ router.get("*", function(req, res) {
 
 // Referee Post Section
 
+// Need to display error message - Phase 2
 router.post('/login', passport.authenticate("local", {
   successRedirect: "/league",
-  failureRedirect: "/login",
+  failureRedirect: "/login"
 }));
 
 router.post('/register', function(req, res, next) {
@@ -176,7 +178,7 @@ router.post('/register', function(req, res, next) {
                 .catch(function(err) {
                   res.json(err);
                 });
-            })
+            });
           }
         }
       });
@@ -196,8 +198,8 @@ function authenticationMiddleware() {
   return (req, res, next) => {
     console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
     if (req.isAuthenticated()) return next();
-    res.redirect('/login')
-  }
+    res.redirect('/login');
+  };
 }
 
 module.exports = router;
