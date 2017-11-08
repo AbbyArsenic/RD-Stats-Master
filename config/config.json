@@ -1,8 +1,8 @@
 {
   "development":
   {
-    "username": "root",
-    "password": "Bacardi13",
+    "username": "username",
+    "password": "your password",
     "database": "statsmaster_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
