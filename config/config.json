@@ -1,7 +1,7 @@
 {
   "development":
   {
-    "username": "username",
+    "username": "public",
     "password": "your password",
     "database": "statsmaster_db",
     "host": "127.0.0.1",
