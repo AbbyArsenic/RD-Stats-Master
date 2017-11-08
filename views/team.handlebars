@@ -1,7 +1,223 @@
-<h1>This will be a team view page!</h1>
-<p> | <a href="/league">Go to League page</a> || <a href="/team">Go to Home page</a> || <a href="/register">Go to Register page</a> || <a href="/login">Go to Login page</a> | </p>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<div class="container-fluid team-background">
+
+        
+        <!-- nav bar -->
+        <nav class="navbar fixed-top navbar-team navbar-expand-lg navbar-dark justify-content-between">
+
+        <div class="expand navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link nav-right" href="index.html">Home</a>
+            </li> 
+          </ul>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-secondary team-button dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Teams
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#bombshells">Bombshells</a>
+            <a class="dropdown-item" href="#brutalbeauties">Brutal Beauties</a>
+            <a class="dropdown-item" href="#coffindraggers">Coffin Draggers</a>
+            <a class="dropdown-item" href="#doomsdayvalkyries">Doomsday Valkyries</a>
+            <a class="dropdown-item" href="#runawaybrides">Runway Brides</a>
+            <a class="dropdown-item" href="#schoolyardscrappers">Schoolyard Scrappers</a>
+          </div>
+        </div>  
+   
+        <div class="expand navbar-expand">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-right" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+          
+        </nav> 
+    
+    <!-- div for holding first scrolling picture -->
+        <div class="parallax-window" data-z-index="2" data-parallax="scroll" data-image-src="assets/img/ArizonaDD.jpg">
+    <!-- end of  div for first picture -->
+        </div>
+
+        <div class="team-div pb-5">
+            <h1 class="text-center py-4">Home Teams</h1>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <img src="assets/icons/bombshells.png">
+                </div>
+                <div class="col">
+                  <img src="assets/icons/brutalbeauties.png">
+                </div>
+                <div class="col ">
+                  <img src="assets/icons/coffindraggers.png">
+                </div>
+                <div class="col ">
+                  <img src="assets/icons/valkries.png">
+                </div>
+                <div class="col ">
+                  <img src="assets/icons/runawaybrides.png">
+                </div>
+                <div class="col ">
+                  <img src="assets/icons/schoolyardscrappers.png">
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <!-- div for holding bombshells scrolling picture -->
+        <div id="bombshells" class="parallax-window" data-z-index="2" data-parallax="scroll" data-image-src="assets/img/teams/bombshells.jpg">
+        <!-- end of  div for bombshells picture -->
+        </div>
+
+        <div class="bombshells-div pb-5">
+            <h1  class="text-center py-4 bombshells">Bombshells</h1>
+            <div class="container">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    
+        <!-- div for holding brutalbeauties scrolling picture -->
+        <div id="brutalbeauties" class="parallax-window" data-z-index="2" data-parallax="scroll" data-image-src="assets/img/teams/brutalBeauties.jpg">
+        <!-- end of  div for brutalbeauties picture -->
+        </div>
+        <div class="brutalbeauties-div pb-5">
+            <h1  class="text-center py-4 brutalbeauties">Brutal Beauties</h1>
+            <div class="container">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+        
+        <!-- div for holding coffindraggers scrolling picture -->
+        <div id="coffindraggers" class="parallax-window" data-z-index="2" data-parallax="scroll" data-image-src="assets/img/teams/coffindraggers.jpg">
+        <!-- end of  div for coffindraggers picture -->
+        </div>
+        <div class="coffindraggers-div pb-5">
+            <h1  class="text-center py-4 coffindraggers">Coffin Draggers</h1>
+            <div class="container">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <!-- div for holding doomsdayvalkyries scrolling picture -->
+        <div id="doomsdayvalkyries" class="parallax-window" data-z-index="2" data-parallax="scroll" data-image-src="assets/img/teams/doomsdayValkyries.jpg">
+        <!-- end of  div for doomsdayvalkyries picture -->
+        </div>
+        <div class="doomsdayvalkyries-div pb-5">
+            <h1  class="text-center py-4 doomsdayvalkyries">Doomsday Valkyries</h1>
+            <div class="container">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <!-- div for holding runawaybrides scrolling picture -->
+        <div id="runawaybrides" class="parallax-window" data-z-index="2" data-parallax="scroll" data-image-src="assets/img/teams/runwayBrides.jpg">
+        <!-- end of  div for runawaybrides picture -->
+        </div>
+        <div class="runawaybrides-div pb-5">
+            <h1  class="text-center py-4 runawaybrides">Runaway Brides</h1>
+            <div class="container">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <!-- div for holding schoolyardscrappers scrolling picture -->
+        <div id="schoolyardscrappers" class="parallax-window" data-z-index="2" data-parallax="scroll" data-image-src="assets/img/teams/schoolyardScrappers.jpg">
+        <!-- end of  div for schoolyardscrappers picture -->
+        </div>
+        <div class="schoolyardscrappers-div pb-5">
+            <h1  class="text-center py-4 schoolyardscrappers">Schoolyard Scrappers</h1>
+            <div class="container">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+        
+
+      
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script>$(function() {
+    $(window).scroll(function() {
+    if($(document).scrollTop() > 100) {
+      $('nav').addClass('shrink');
+      $('button').addClass('shrink-team-button');
+    }
+    else {
+    $('nav').removeClass('shrink');
+    $('button').removeClass('shrink-team-button');
+    }
+  });
+
+});</script>

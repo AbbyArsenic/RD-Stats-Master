@@ -1,18 +1,39 @@
-<div class="container">
-  <h1>Welcome to AZDD Login Page</h1> {{#if newUser}} {{#each newUser}}
-  <div class="alert alert-danger">{{this.msg}}
+<div class="login-background ">
+<!-- d-flex align-content-center -->
+    <div class="container-login ">
+      <div class="row align-items-center">
+        <div class="col-sm">
+          <h1 class="text-center h1welcome">Login</h1> {{#if newUser}} {{#each newUser}}
+          <div class="alert alert-danger">{{this.msg}}
+          </div>
+          {{/each}} {{/if}}
+          <!-- <p>Please enter in Username and Password that you created.</p> -->
+          <form method="POST" action="/login">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="username" class="form-control" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="button-container">
+            <button type="submit" class="btn btn-light login-submitbutton">Home</button>
+            <button type="submit" class="btn btn-light login-submitbutton-right">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+
+    </div>
   </div>
-  {{/each}} {{/if}}
-  <p>Please enter in Username and Password that you created.</p>
-  <form method="POST" action="/login">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" name="username" class="form-control" placeholder="Username">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" name="password" class="form-control" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+      
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

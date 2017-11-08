@@ -1,7 +1,83 @@
-<h1>This will be the home page!</h1>
-<p> | <a href="/league">Go to League page</a> || <a href="/team">Go to Team View page</a> || <a href="/register">Go to Register page</a> || <a href="/login">Go to Login page</a> | </p>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+ <div id="body-index">
+    <div id="preloader">
+        <h1 class="text-animation animated fadeInUp">Arizona</h1>
+        <ul class="fly-in-text hidden">
+            <li>D</li>
+            <li>E</li>
+            <li>R</li>
+            <li>B</li>
+            <li>Y</li>
+            <li></li>
+            <li>D</li>
+            <li>A</li>
+            <li>M</li>
+            <li>E</li>
+            <li>S</li>
+        </ul>
+    </div>
+    
+    
+    <!-- Video Background -->
+    <div class="container-video v-header">
+        <div class="video-wrap">
+            <video src="assets/video/AZDD.mp4" autoplay="true" loop="true"></video>
+        </div>
+        <div class="header-overlay">
+        <div class="header-content">
+        
+        <!-- nav bar -->
+        <nav class="navbar navbar-index navbar-expand-lg navbar-dark justify-content-between">
+
+          
+        <div class="expand navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link nav-right" href="team.html">Team Page</a>
+            </li> 
+          </ul>
+        </div>
+
+        <a class="navbar-brand mt-5" target="_blank" href="http://www.arizonaderbydames.com/">
+            <img src="assets/icons/AZDD.png" width="125" height="125" alt="">
+        </a>
+              
+           
+        <div class="expand navbar-expand">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-right" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+          
+        </nav>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        // $(window).on('load', function(){
+        //     $('.container-video').delay(10000).css({'display':'initial'});
+        // })
+
+        $(function(){
+            setTimeout(function() {       
+                $('.container-video').fadeIn('slow').css({'display':'initial'});
+            },3500);
+        });
+
+        $(function(){
+            setTimeout(function() {       
+                $('.fly-in-text').removeClass('hidden');
+            },500);
+        });
+    </script>
