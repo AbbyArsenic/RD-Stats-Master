@@ -41,61 +41,79 @@ router.get("/login", function(req, res) {
 
 
 // -------API ROUTES--------- //
-router.get("/api/teams", function(req, res) {
-  db.teams.findAll({}).then(function(data) {
-    res.json(data);
+  router.get("/api/teams", function(req, res) {
+    db.teams.findAll({}).then(function(data) {
+      res.json(data);
+    });
   });
-});
 
-router.get("/api/skaters", function(req, res) {
-  db.skaters.findAll({}).then(function(data) {
-    res.json(data);
+  router.get("/api/skaters", function(req, res) {
+    db.skaters.findAll({}).then(function(data) {
+      res.json(data);
+    });
   });
-});
 
-router.get("/api/skaters/team/:team_id", function(req, res) {
-  db.skaters.findAll({
-    where: {
-      team_id: req.params.team_id
-    }
-  }).then(function(data) {
-    res.json(data);
+  router.get("/api/skaters/team/:team_id", function(req, res) {
+    db.skaters.findAll({
+      where: {
+        team_id: req.params.team_id
+      }
+    }).then(function(data) {
+      res.json(data);
+    });
   });
-});
+
+  router.post("/api/jams", function(req, res){
+    db.jams.create({
+      jam_id: req.body.jam_id,
+      bout_id: req.body.bout_id,
+      team_id: req.body.team_id,
+      jam_number: req.body.jam_number,
+      points: req.body.points,
+      jammer: req.body.jammer,
+      pivot: req.body.pivot,
+      blocker1: req.body.blocker1,
+      blocker2: req.body.blocker2,
+      blocker3: req.body.blocker3,
+      star_pass: req.body.star_pass
+    }).then( (data) => {
+      res.json(data);
+    });
+  });
 
 
 // -------TEST ROUTES--------- //
 
-// Find all skaters
-router.get("/skaters", function(req, res) {
-  db.skaters.findAll()
-    .then(function(data) {
+  // Find all skaters
+  router.get("/skaters", function(req, res) {
+    db.skaters.findAll()
+      .then(function(data) {
+        res.render("test", { skater: data });
+      });
+  });
+
+  // Find all skaters by team_id
+  router.get("/team-members/:team_id", function(req, res) {
+    db.skaters.findAll({
+      where: {
+        team_id: req.params.team_id
+      }
+    }).then(function(data) {
       res.render("test", { skater: data });
     });
-});
-
-// Find all skaters by team_id
-router.get("/team-members/:team_id", function(req, res) {
-  db.skaters.findAll({
-    where: {
-      team_id: req.params.team_id
-    }
-  }).then(function(data) {
-    res.render("test", { skater: data });
   });
-});
 
-// Find a skater by skater_id
-router.get("/skater/:skater_id", function(req, res) {
-  db.skaters.findOne({
-    where: {
-      skater_id: req.params.skater_id
-    }
-  }).then(function(data) {
-    console.log("\nSelected skater: ", data.get('skater_name'), "\n");
-    res.render("test", { skater: data });
+  // Find a skater by skater_id
+  router.get("/skater/:skater_id", function(req, res) {
+    db.skaters.findOne({
+      where: {
+        skater_id: req.params.skater_id
+      }
+    }).then(function(data) {
+      console.log("\nSelected skater: ", data.get('skater_name'), "\n");
+      res.render("test", { skater: data });
+    });
   });
-});
 
 
 // Any undefinted routes direct to home page
