@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: { leng: [1] }
     }, 
-    team: {
+    team_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'teams',

@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    bout: {
+    bout_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'bouts',
@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       allowNull: false
     },
-    jam: {
+    jam_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'jams',
@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       allowNull: false
     },
-    skater: {
+    skater_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'skaters',
