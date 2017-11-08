@@ -2,7 +2,7 @@
   "development":
   {
     "username": "public",
-    "password": "yourpassword",
+    "password": "your password",
     "database": "statsmaster_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
