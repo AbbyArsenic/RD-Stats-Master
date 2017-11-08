@@ -1,5 +1,4 @@
 module.exports = function(sequelize, DataTypes) {
-
   var Teams = sequelize.define("teams", {
     
   	team_id: {

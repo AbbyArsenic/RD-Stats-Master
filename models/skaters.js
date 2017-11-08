@@ -1,5 +1,4 @@
 module.exports = function(sequelize, DataTypes) {
-
   var Skaters = sequelize.define("skaters", {
 
     skater_id: {
@@ -17,11 +16,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: { leng: [1] }
-    },
-    team_id: {
+    }, 
+    team: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'teams',
+        key: 'team_id'
+      },
       allowNull: false,
-      validate: { len: [1] }
     }
   },
   {

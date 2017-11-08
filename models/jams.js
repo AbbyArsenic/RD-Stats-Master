@@ -8,12 +8,20 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    bout_id: {
+    bout: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'bouts',
+        key: 'bout_id'
+      },
       allowNull: false,
     },
-    team_id: {
+    team: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'teams',
+        key: 'team_id'
+      },
       allowNull: false,
     },
     jam_number: {
@@ -25,37 +33,50 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       default: 0,
-      validate: { min: 0 }
+      validate: { min: 0, max: 50 }
     },
     jammer: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      // Should these positions be made as Foreign Keys?
-      // references: {
-      //   model: ,
-      //   key: 
-      // },
-      // validate: { min: 0 }
+      references: {
+        model: 'skaters',
+        key: 'skater_id'
+      },
+      validate: { min: 0 }
     },
     pivot: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'skaters',
+        key: 'skater_id'
+      },
       validate: { min: 0 }
     },
     blocker1: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'skaters',
+        key: 'skater_id'
+      },
       validate: { min: 0 }
     },
     blocker2: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'skaters',
+        key: 'skater_id'
+      },
       allowNull: true,
-      // validate: { min: 0 }
     },
     blocker3: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'skaters',
+        key: 'skater_id'
+      },
       allowNull: true,
-      // validate: { min: 0 }
     },
     star_pass: {
       type: DataTypes.BOOLEAN,
