@@ -10,10 +10,18 @@ module.exports = function(sequelize, DataTypes) {
     },
     team1_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'teams',
+        key: 'team_id'
+      },
       allowNull: false,
     },
     team2_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'teams',
+        key: 'team_id'
+      },
       allowNull: false,
     },
     date: {
