@@ -61,41 +61,23 @@ app.use("/", routes);
 passport.use(new LocalStrategy(
   function(username, password, done) {
     var db = require("./models/");
-
-    db.referee.findOne({
-      where: {
-        referee_name: username
-      }
-    }).then(function(data) {
-
+    db.referee.findOne({ where: { referee_name: username } }).then(function(user) {
       // Username doesn't match - Returns to login page - Need to display error message - Phase 2!!
-      if (!data) {
-        return done(null, false, { message: "No user found." });
-      }
+      if (!user) { return done(null, false, { message: "No user found." }); }
 
-      var hash = data.dataValues.referee_password;
-      var referee_id = data.dataValues.referee_id;
-      console.log("hash: " + hash);
-      console.log("id: " + referee_id)
-
+      var hash = user.dataValues.referee_password;
+      var referee_id = user.dataValues.referee_id;
       bcrypt.compare(password, hash, function(err, response) {
         console.log("response is: " + response);
 
-        if (response === true) {
-          return done(null, { referee_id: referee_id }); // If name and password match, return id
-
-        }
+        // If name and password match, return id
+        if (response === true) { return done(null, { referee_id: referee_id }); }
         // Username match but password not match - Returns to login page - Need to display error message - Phase 2!!
-        else {
-          return done(null, false, { message: "Wrong password." });
-        }
+        else { return done(null, false, { message: "Wrong password." }); }
       });
     });
   }
 ));
-
-
-
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
