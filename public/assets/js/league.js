@@ -57,44 +57,35 @@ $(document).ready(function() {
         }).append($("<p>" + eachSkater[i].skater_number + "</p>").addClass("normal"));
       numberDiv.append(numberBtn);
 
-      //section to display Jammer checkbox
-      var jDiv = $("<div>").addClass("col-1");
-      var jLabel = $("<label>").addClass("form-check-label");
-      var jInput = $("<input>").attr({
-        type:"checkbox",
-        "data-type": "linkTo.player["+eachSkater[i].skater_id+"]",
-        class:"form-check-input",
-        id: "jammer["+eachSkater[i].skater_id+"]",
-        value:"j"
-     }).append($("<p>J</p>").addClass("normal"));
-      jLabel.append(jInput);
-      jDiv.append(jLabel);
+      var jForm = $("<form>").addClass("col-3");
+        var jDiv = $("<div>").addClass("form-row align-items-center");
+        var pDiv =$("<div>").addClass("col-auto");
+        // var jLabel = $("<label>").attr({
+        //       class:"custom-select mb-2 mr-sm-2 mb-sm-0",
+        //       for: "jpb"
+        //       }).append($("<p>Please select</p>").addClass("normal"));
+        var jSelect = $("<select>").attr({
+              class:"custom-select mb-2 mr-sm-2 mb-sm-0",
+              id: "jpb"
+              });
+        var optionselect = $("<option>").prop("selected", true).append($("<p>Choose...</p>").addClass("normal"));
+        var joption = $("<option>").attr("value", "j").append($("<p>Jammer</p>").addClass("normal"));
+        var poption = $("<option>").attr("value", "p").append($("<p>Pivot</p>").addClass("normal"));
+         var boption = $("<option>").attr("value", "b").append($("<p>Blocker</p>").addClass("normal"));
 
-      //section to display Pivot checkbox
-      var pDiv = $("<div>").addClass("col-1");
-      var pLabel = $("<label>").addClass("form-check-label");
-      var pInput = $("<input>").attr({
-       type:"checkbox",
-       "data-type": "linkTo.player["+eachSkater[i].skater_id+"]",
-       class:"form-check-input",
-       id: "pivot["+eachSkater[i].skater_id+"]",
-       value:"p"
-     }).append($("<p>P</p>").addClass("normal"));
-      pLabel.append(pInput);
-      pDiv.append(pLabel);
 
-      //section to display Blocker checkbox
-      var bDiv = $("<div>").addClass("col-1");
-      var bLabel = $("<label>").addClass("form-check-label");
-      var bInput = $("<input>").attr({
-       type:"checkbox",
-       "data-type": "linkTo.player["+eachSkater[i].skater_id+"]",
-       class:"form-check-input",
-       id: "blocker["+eachSkater[i].skater_id+"]",
-       value:"b"
-     }).append($("<p>B</p>").addClass("normal"));
-      bLabel.append(bInput);
-      bDiv.append(bLabel);
+       jSelect.append(boption);
+        jSelect.append(poption);
+        jSelect.append(joption);
+        jSelect.append(optionselect);
+        pDiv.append(jSelect);
+        // pDiv.append(jLabel);
+        jDiv.append(pDiv);
+        jForm.append(jDiv);
+
+       
+
+       
 
       //section for form input
       var penaltiesDiv = $("<div>").addClass("col-7");
@@ -108,11 +99,9 @@ $(document).ready(function() {
       penaltiesDiv.append(penaltiesInput);
 
       //Appending everthing
-      mainDiv.append(numberDiv);
-      mainDiv.append(jDiv);
-      mainDiv.append(pDiv);
-      mainDiv.append(bDiv);
-      mainDiv.append(penaltiesDiv);
+        mainDiv.append(numberDiv);
+        mainDiv.append(jForm);
+        mainDiv.append(penaltiesDiv);
       // append the row to the league.html
       $("#playerData").append(mainDiv);
     }
