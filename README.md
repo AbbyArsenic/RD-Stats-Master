@@ -12,23 +12,23 @@
 
 ## Tech used
 ### This app is built in JavaScript both in the front and back.  Here is a pretty comprehensive list of what is being included in our app:
-1. Node.js
-2. Express
-3. Sequelize (using MySQL dialect)
-4. Handlebars
-5. jQuery
-6. Parallax
-7. Particle.js
-8. Various NPM packages include: 
+### 1. Node.js
+### 2. Express
+### 3. Sequelize (using MySQL dialect)
+### 4. Handlebars
+### 5. jQuery
+### 6. Parallax
+### 7. Particle.js
+### 8. Various NPM packages include: 
 	- bcrypt
 	- passport
 	- connect-flash
 
 ## Initial table data population order
 ### If building out the app locally, we've provided seed data to get you started.  you'll need to seed in this order: 
-1. Teams
-2. Skaters
-3. Bouts
-4. Jams
-5. Penalty Codes
-6. Penalties
+### 1. Teams
+### 2. Skaters
+### 3. Bouts
+### 4. Jams
+### 5. Penalty Codes
+### 6. Penalties
