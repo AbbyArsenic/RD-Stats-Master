@@ -43,66 +43,51 @@ $(document).ready(function() {
     
     for (var i = 0; i < eachSkater.length; i++) {
 
-      // creates a main Div to hold the row
+      // creates a main div to hold each row
       var mainDiv = $("<div>").addClass("row mt-2");
 
-      //section to display number
-      var numberDiv = $("<div>").addClass("col-2");
+      // div to hold player # buttons
+      var playerName = $("<div>").addClass("col-4");
       var numberBtn = $("<button>").attr({
         type:"button",
         // WE NEED TO PUT LINK TO PLAYER IN DB HERE
-        "data-type": "linkTo.player["+eachSkater[i].skater_id+"]",
+        "data-skater_id": eachSkater[i].skater_id,
         class:"btn btn-danger"
         //20 SHOULD BE THE PATH TO GRAB THE NUMBERS
-        }).append($("<p>" + eachSkater[i].skater_number + "</p>").addClass("normal"));
-      numberDiv.append(numberBtn);
+        }).append($("<p>"+eachSkater[i].skater_number+" - "+eachSkater[i].skater_name+"</p>").addClass("normal"));
+      playerName.append(numberBtn);
 
-      var jForm = $("<form>").addClass("col-3");
-        var jDiv = $("<div>").addClass("form-row align-items-center");
-        var pDiv =$("<div>").addClass("col-auto");
-        // var jLabel = $("<label>").attr({
-        //       class:"custom-select mb-2 mr-sm-2 mb-sm-0",
-        //       for: "jpb"
-        //       }).append($("<p>Please select</p>").addClass("normal"));
-        var jSelect = $("<select>").attr({
-              class:"custom-select mb-2 mr-sm-2 mb-sm-0",
-              id: "jpb"
-              });
-        var optionselect = $("<option>").prop("selected", true).append($("<p>Choose...</p>").addClass("normal"));
-        var joption = $("<option>").attr("value", "j").append($("<p>Jammer</p>").addClass("normal"));
-        var poption = $("<option>").attr("value", "p").append($("<p>Pivot</p>").addClass("normal"));
-         var boption = $("<option>").attr("value", "b").append($("<p>Blocker</p>").addClass("normal"));
+      // div to hold the position select dropdown
+      var positionForm = $("<form>").addClass("col-3");
+      var jDiv = $("<div>").addClass("form-row align-items-center");
+      var pDiv =$("<div>").addClass("col-auto");
+      var positionSelect = $("<select>").attr({
+            class:"form-control mb-2 mr-sm-2 mb-sm-0",
+            id: "choosePosition",
+            "data-skater_id":eachSkater[i].skater_id
+            });
+      var optionBlank = $("<option selected>").attr({"value":" "}).append($("<p> </p>").addClass("normal"));
+      var optionJ = $("<option>").attr({"value":"j", "data-skater_id":eachSkater[i].skater_id}).append($("<p>Jammer</p>").addClass("normal"));
+      var optionP = $("<option>").attr({"value":"p", "data-skater_id":eachSkater[i].skater_id}).append($("<p>Pivot</p>").addClass("normal"));
+      var optionB = $("<option>").attr({"value":"b", "data-skater_id":eachSkater[i].skater_id}).append($("<p>Blocker</p>").addClass("normal"));
+      positionSelect.append(optionB, optionP, optionJ, optionBlank);
+      pDiv.append(positionSelect);
+      jDiv.append(pDiv);
+      positionForm.append(jDiv);
 
-
-       jSelect.append(boption);
-        jSelect.append(poption);
-        jSelect.append(joption);
-        jSelect.append(optionselect);
-        pDiv.append(jSelect);
-        // pDiv.append(jLabel);
-        jDiv.append(pDiv);
-        jForm.append(jDiv);
-
-       
-
-       
-
-      //section for form input
-      var penaltiesDiv = $("<div>").addClass("col-7");
+      // div for penalties text input
+      var penaltiesDiv = $("<div>").addClass("col-4");
       var penaltiesInput = $("<input>").attr({
-       type:"text",
-       "data-type": "linkTo.player["+eachSkater[i].skater_id+"]",
-       class:"form-control",
-       id: "blocker["+eachSkater[i].skater_id+"]",
-       placeholder:"Penalties"
-     });
+        type:"text",
+        "data-skater_id": eachSkater[i].skater_id,
+        class:"form-control",
+        placeholder:"Penalties"
+      });
       penaltiesDiv.append(penaltiesInput);
 
-      //Appending everthing
-        mainDiv.append(numberDiv);
-        mainDiv.append(jForm);
-        mainDiv.append(penaltiesDiv);
-      // append the row to the league.html
+      // Place all 3 parts into mainDiv
+      mainDiv.append(playerName, positionForm, penaltiesDiv);
+      // Place the whole row into the playerData div
       $("#playerData").append(mainDiv);
     }
   }

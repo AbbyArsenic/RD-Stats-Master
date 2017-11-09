@@ -17,10 +17,28 @@ router.get("/league", function(req, res) {
     .then(function(teams) {
       res.render("league", {
         title: "League",
-        team: teams
+        team: teams,
+        jamNumber: 1
       });
     });
 });
+
+// This is the router.get line for authenication turned OFF
+router.get("/league/:jamNumber", function(req, res) {
+
+  // This is the router.get line for authenticaion turned ON
+  // router.get("/league", authenticationMiddleware(), function(req, res) {
+  db.teams.findAll({})
+    .then(function(teams) {
+      res.render("league", {
+        title: "League",
+        team: teams,
+        jamNumber: req.params.jamNumber
+      });
+    });
+});
+
+
 
 router.get("/team", function(req, res) {
   res.render("team", { title: 'Team' });
@@ -65,7 +83,6 @@ router.get("/login", function(req, res) {
 
   router.post("/api/jams", function(req, res){
     db.jams.create({
-      jam_id: req.body.jam_id,
       bout_id: req.body.bout_id,
       team_id: req.body.team_id,
       jam_number: req.body.jam_number,

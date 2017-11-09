@@ -324,6 +324,10 @@
 	padding:0;
 }
 
+#playerData {
+	padding-bottom: 50px;
+}
+
 .footer{
     position: fixed;
     bottom: 0;
@@ -480,6 +484,10 @@ canvas {
     font-size: 1rem;
 	}
 
+	.dataHeading h2 {
+		font-size: 1.3rem;
+	}
+
 	.navbar-team{
 		font-size: 1rem;
 	}
@@ -487,6 +495,10 @@ canvas {
 	.team-button{
 		font-size: 1.3rem;
 		margin-top: -12px;
+	}
+
+	.container-login{
+		width: 70%;
 	}
 }
 
