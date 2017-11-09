@@ -46,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     pivot: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'skaters',
         key: 'skater_id'
@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     blocker1: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'skaters',
         key: 'skater_id'
