@@ -1,0 +1,1 @@
+INSERT INTO `bouts` (`bout_id`, `team1_id`, `team2_id`, `date`) VALUES ('1', '5', '6', '2017-10-28');
