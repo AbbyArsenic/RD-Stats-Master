@@ -5,6 +5,14 @@
 - ### Bryan Becker
 - ### Tyler Mitchell
 
+# See a live version of this site at https://peaceful-spire-97933.herokuapp.com/
+
+## Visitors to the Heroku deployed website can access the full site by using the below credentials for the login page:
+### Username: testing
+### Password: 123asd!@#ASD
+
+
+
 ## Premise:
 ### This app's ambition is to ultimately be built out to record stats for various sports.  If one has a weekly soccer game or is coaching a little league football team, this web app will provide the means to track team and player stats from game to game across a season. 
 
@@ -33,6 +41,3 @@
 ### 5. Penalty Codes
 ### 6. Penalties
 
-#### Visitors to the Heroku deployed website can access the full site by using the below credentials for the login page:
-##### Username: testing
-##### Password: 123asd!@#ASD
