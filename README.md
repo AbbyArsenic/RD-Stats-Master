@@ -33,6 +33,6 @@
 ### 5. Penalty Codes
 ### 6. Penalties
 
-### Visitors to the Heroku deployed website can access the full site by using the below credentials for the login page:
-Username: testing
-Password: 123asd!@#ASD
+#### Visitors to the Heroku deployed website can access the full site by using the below credentials for the login page:
+##### Username: testing
+##### Password: 123asd!@#ASD
