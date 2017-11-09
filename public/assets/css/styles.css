@@ -1,14 +1,25 @@
+/*font-family: 'Indie Flower', cursive;
+font-family: 'Ubuntu Condensed', sans-serif;
+font-family: 'Audiowide', cursive;
+font-family: 'Fugaz One', cursive;
+font-family: 'Keania One', cursive;*/
+
+
 /*------index styles---------------*/
 /*-------------------------------*/
+html,body{
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
 
 #body-index{
 	margin: 0;
 	font-family: sans-serif;
-	font-size: 1 rem;
+	font-size: 1rem;
 	line-height: 1.5;
 	color:#333;
 	overflow-x: hidden;
-	background: black;
+	background: #000;
+	height: 100vh;
 }
 
 /*text animation*/
@@ -26,7 +37,7 @@
 	left: 20%;
 	top:50%;*/
 	color: white;
-	font-family: serif;
+	font-family: sans-serif;
 	font-weight: 300;
 	font-size: 6em;
 	letter-spacing: 5px;
@@ -49,7 +60,7 @@
 	margin-top: 50px;
 	color:#FF69B4;
 	/*need to change to font-family: */
-	font-family: serif;
+	font-family: 'Fugaz One', cursive;
 	font-weight: 300;
 	font-size: 4em;
 	opacity: 1;
@@ -117,7 +128,7 @@
 	left: 0;
 	background-color:black;
 	z-index: 1;
-	opacity:0.65;
+	opacity:0.55;
 }
 
 .header-content {
@@ -133,6 +144,7 @@
     background: transparent;
     font-size: 1.3rem;
    /* border-bottom: white solid 5px;*/
+   font-family: 'Audiowide', cursive;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -160,6 +172,17 @@
 	margin:0;
 }
 
+.team-background h1 {
+	font-family: 'Fugaz One', cursive;
+	
+}
+
+.team-background p {
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 1.2rem;
+}
+
+
 
 /*parallax css*/
 
@@ -180,6 +203,7 @@
    /* border-bottom: white solid 5px;*/
     z-index: 4;
     font-size:1.3rem;
+    font-family: 'Audiowide', cursive;
 }
 
 /* Collapsing Navbar Styles */
@@ -315,6 +339,8 @@
 
 /*------league Styles-------*/
 /*-------------------------------*/
+
+
 .space{
 	margin: 5px;
 }
@@ -322,10 +348,6 @@
 .normal{
 	margin:0;
 	padding:0;
-}
-
-#playerData {
-	padding-bottom: 50px;
 }
 
 .footer{
@@ -352,7 +374,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 1.2rem;
 }
+
+#particles-js h1{
+	font-family: 'Audiowide', cursive;
+
+}
+
+#particles-js label{
+	
+}
+
 
 
 .container-login{
@@ -484,10 +518,6 @@ canvas {
     font-size: 1rem;
 	}
 
-	.dataHeading h2 {
-		font-size: 1.3rem;
-	}
-
 	.navbar-team{
 		font-size: 1rem;
 	}
@@ -495,10 +525,6 @@ canvas {
 	.team-button{
 		font-size: 1.3rem;
 		margin-top: -12px;
-	}
-
-	.container-login{
-		width: 70%;
 	}
 }
 
