@@ -14,6 +14,12 @@ var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt');
 // var flash = require("connect-flash");
+var http = require("http");
+
+// Keep Heroku live
+setInterval(function() {
+  http.get("http://peaceful-spire-97933.herokuapp.com/");
+  }, 300000);
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
